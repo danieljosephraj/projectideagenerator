@@ -19,8 +19,8 @@ st.title("Project Generator")
 st.write("Generate project ideas and guidelines for their development.")
 
 # User input
-job_title = st.text_input("Enter your Target job title (e.g., data scientist, software engineer,front-end developer, etc..):")
-tools = st.text_input("Enter tools for projects (e.g., PPython, Java, C, C++, Excel, etc..):")
+job_title = st.text_input("Enter your Target job title (e.g., data scientist, software engineer, front-end developer, etc..):")
+tools = st.text_input("Enter tools for projects (e.g., Python, Java, C, C++, Excel, etc..):")
 technique = st.text_input("Enter a technique to showcase (e.g., Machine Learning, Deep Learning, AJAX, React.js, etc..)")
 industry = st.text_input("Enter an industry for projects(e.g., E-Commerce , Retail , Finance , Healthcare etc..)")
 
