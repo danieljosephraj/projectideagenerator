@@ -32,9 +32,9 @@ deployment_platform = st.text_input("Enter preferred deployment platform(s) for 
 if st.button("Generate Project Ideas"):
     if job_title and tools and technique and industry:
         # Generate project ideas using Gemini AI
-        prompt = f"Generate only top 10 project titles for a {job_title} using {tools} with a focus on {technique} and highlighting skills in {skills}."
+        prompt = (f"Generate only top 10 project titles for a {job_title} using {tools} with a focus on {technique} and highlighting skills in {skills}."
                  f"The projects should be suitable for {collaboration_preference} collaboration, have a duration of {project_duration}, and be deployable on {deployment_platform}."
-                 f"The projects should be relevant to the {industry} industry."
+                 f"The projects should be relevant to the {industry} industry.")
         response = model.generate_content(prompt)
 
         # Store project ideas in session state
