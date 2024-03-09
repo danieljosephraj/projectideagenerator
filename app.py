@@ -22,13 +22,19 @@ st.write("Generate project ideas and guidelines for their development.")
 job_title = st.text_input("Enter your Target job title (e.g., Data Scientist, Software Engineer, Front-end Developer, etc..):")
 tools = st.text_input("Enter tools for projects (e.g., Python, Java, C, C++, Excel, etc..):")
 technique = st.text_input("Enter a technique to showcase (e.g., Machine Learning, Deep Learning, AJAX, React.js, etc..)")
+skills = st.text_input("Enter skills to highlight (e.g., Data Analysis, Web Development, Problem Solving, etc..):")
+project_duration = st.text_input("Enter expected project duration (e.g., 2 weeks, 3 months, 1 year, etc..):")
+collaboration_preference = st.selectbox("Select your preference for collaboration:", ["Individual", "Team", "Either"])
 industry = st.text_input("Enter an industry for projects(e.g., E-Commerce , Retail , Finance , Healthcare etc..)")
+deployment_platform = st.text_input("Enter preferred deployment platform(s) for your projects (e.g., Web, Mobile, Desktop, Cloud, etc..):")
 
 # Button to generate project ideas
 if st.button("Generate Project Ideas"):
     if job_title and tools and technique and industry:
         # Generate project ideas using Gemini AI
-        prompt = f"Generate only top 10 project titles for a {job_title} using {tools} with a focus on {technique} in the {industry} industry."
+        prompt = f"Generate only top 10 project titles for a {job_title} using {tools} with a focus on {technique} and highlighting skills in {skills}."
+                 f"The projects should be suitable for {collaboration_preference} collaboration, have a duration of {project_duration}, and be deployable on {deployment_platform}."
+                 f"The projects should be relevant to the {industry} industry."
         response = model.generate_content(prompt)
 
         # Store project ideas in session state
